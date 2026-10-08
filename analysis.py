@@ -20,6 +20,8 @@ def query(sql):
         return pd.read_sql(sql, con)
 
 
+#function for the required bar - chart
+
 def bar_chart(df, label, value, title, filename, horizontal=True):
     fig, ax = plt.subplots(figsize=(8, 5))
     if horizontal:
@@ -33,6 +35,7 @@ def bar_chart(df, label, value, title, filename, horizontal=True):
     fig.savefig(OUT / filename, dpi=120)
     plt.close(fig)
 
+#function to make required charts 
 
 def make_charts(jobs):
     categories = query("""
